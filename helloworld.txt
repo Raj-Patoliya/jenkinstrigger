@@ -1,1 +1,13 @@
 Hello World!
+http://192.168.40.12:8080/job/build-github/build?token=mybuildtoken
+JENKINS_URL/job/build-github/build?token=TOKEN_NAME
+
+
+wget -q --auth-no-challenge --user admin --password admin --output-document - 'http://192.168.40.12:8080/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)'
+
+Jenkins-Crumb:a23baf3409c5f6e58032803be3b816627015cacc9c44001db4146ff39883e663%  
+
+curl -I -X POST http://admin:111c8464c36744bdf4d581f5dc24b63fc8@192.168.40.12:8080/job/build-github/build?token=mybuildtoken -H "Jenkins-Crumb:38771140b79977123c6e45c57937683acb7a22760aabc2557737504d3d0862cf%"
+
+
+
